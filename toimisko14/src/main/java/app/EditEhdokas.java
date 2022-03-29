@@ -61,9 +61,9 @@ public class EditEhdokas extends HttpServlet {
 		
 		// Create connection
 		Dao dao=new Dao();
-		Game game = readGame(request);
+		Ehdokas ehdokas = readEhdokas(request);
 		
-		dao.updateGame(game);
+		dao.updateEhdokas(ehdokas);
 		
 		dao.close();
 		
@@ -73,9 +73,9 @@ public class EditEhdokas extends HttpServlet {
 		response.sendRedirect("/showdata");
 	}
 	
-	private Game readGame(HttpServletRequest request) {
+	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		Game game=new Game();
+		Ehdokas ehdokas=new Ehdokas();
 		game.setBreed(request.getParameter("breed"));
 		game.setWeight(request.getParameter("weight"));
 		game.setId(Integer.parseInt(request.getParameter("id")));
