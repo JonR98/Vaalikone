@@ -39,7 +39,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into ehdokkaat(breed, weight) values('"+ehdokas.getBreed()+"', "+ehdokas.getWeight()+")");
+			count=stmt.executeUpdate("insert into ehdokkaat(Sukunimi, Etunimi, Puolue, Kotipaikkakunta, Ika, Miksi_eduskuntaan?, Mita_asioita_haluat_edistaa) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+")");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -57,8 +57,14 @@ public class Dao {
 			while (rs.next()) {
 				Game game=new Game();
 				game.setId(rs.getInt("id"));
-				game.setBreed(rs.getString("breed"));
-				game.setWeight(rs.getFloat("weight"));
+				game.setSukunimi(rs.getString("Sukunimi"));
+				game.setEtunimi(rs.getString("Etunimi"));
+				game.setPuolue(rs.getString("Puolue"));
+				game.setKotipaikkakunta(rs.getString("Kotipaikkakunta"));
+				game.setIka(rs.getInt("Ika"));
+				game.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
+				game.setMita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
+				game.setAmmatti(rs.getString("Ammatti"));
 				list.add(game);
 			}
 		} catch (SQLException e) {
@@ -100,8 +106,15 @@ public class Dao {
 			if (resultset.next()) {
 				result = new Game();
 				result.setId(resultset.getInt("id"));
-				result.setBreed(resultset.getString("breed"));
-				result.setWeight(resultset.getFloat("weight"));
+				result.setId(resultset.getInt("id"));
+				result.setSukunimi(resultset.getString("Sukunimi"));
+				result.setEtunimi(resultset.getString("Etunimi"));
+				result.setPuolue(resultset.getString("Puolue"));
+				result.setKotipaikkakunta(resultset.getString("Kotipaikkakunta"));
+				result.setIka(resultset.getInt("Ika"));
+				result.setMiksi_eduskuntaan(resultset.getString("Miksi_eduskuntaan?"));
+				result.setMita_asioita_haluat_edistaa(resultset.getString("Mita_asioita_haluat_edistaa"));
+				result.setAmmatti(resultset.getString("Ammatti"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
