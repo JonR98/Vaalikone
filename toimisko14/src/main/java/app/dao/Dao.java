@@ -39,7 +39,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into gametable(breed, weight) values('"+ehdokas.getBreed()+"', "+ehdokas.getWeight()+")");
+			count=stmt.executeUpdate("insert into ehdokkaat(breed, weight) values('"+ehdokas.getBreed()+"', "+ehdokas.getWeight()+")");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -53,7 +53,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from gametable");
+			ResultSet rs=stmt.executeQuery("select * from ehdokkaat");
 			while (rs.next()) {
 				Game game=new Game();
 				game.setId(rs.getInt("id"));
@@ -70,7 +70,7 @@ public class Dao {
 	
 	public int updateGame(Game game) {
 		int count = 0;
-		String sql = "update gametable set breed = ?, weight = ? where id = ?";
+		String sql = "update ehdokkaat set breed = ?, weight = ? where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
@@ -89,7 +89,7 @@ public class Dao {
 	
 	public Game getGameInfo(int id) {
 		Game result = null;
-		String sql = "select * from gametable where id = ?";
+		String sql = "select * from ehdokkaat where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 						
