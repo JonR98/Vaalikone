@@ -19,14 +19,14 @@ import app.dao.Dao;
 import app.model.Ehdokas;
 
 /*
- * The name of the servlet is AddGame
- * and the servlet's URI (url-pattern) is 'addgame'
+ * The name of the servlet is AddEhdokas
+ * and the servlet's URI (url-pattern) is 'addehdokas'
  */
 @WebServlet(
-		name = "AddGame",
-		urlPatterns = {"/addgame"}
+		name = "AddEhdokas",
+		urlPatterns = {"/addehdokas"}
 		)
-public class AddGame extends HttpServlet {
+public class AddEhdokas extends HttpServlet {
 	/*
 	 * If the request type is POST, the request is transferred to the method doGet
 	 */
@@ -48,17 +48,17 @@ public class AddGame extends HttpServlet {
 		rd.include(request,  response);;
 		
 		// Read parameters to Model
-		Game game=readGame(request);
+		Ehdokas ehdokas=readEhdokas(request);
 	
 		// Create connection
 		Dao dao=new Dao();
 		
 		// Save value and query total list
-		dao.saveGame(game);
-		ArrayList<Game> list=dao.readAllGame();
+		dao.saveEhdokas(ehdokas);
+		ArrayList<Ehdokas> list=dao.readAllEhdokas();
 		
 		// print output and close connection
-		printGameList(out, list);
+		printEhdokasList(out, list);
 		dao.close();
 		
 		
@@ -72,17 +72,21 @@ public class AddGame extends HttpServlet {
 	}
 
 
-	private Game readGame(HttpServletRequest request) {
+	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		Game game=new Game();
+		return null;
+	}
+	private Ehdokas readEhdokas(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		Ehdokas ehdokas=new Ehdokas();
 		game.setBreed(request.getParameter("breed"));
 		game.setWeight(request.getParameter("weight"));
 		return game;
 	}
 	
-	private void printGameList(PrintWriter out, ArrayList<Game> list) {
+	private void printGameList(PrintWriter out, ArrayList<Ehdokas> list) {
 		out.println("<ul>");
-		for (Game g:list) {
+		for (Ehdokas g:list) {
 			out.println("<li>"+g);
 		}
 		out.println("</ul>");

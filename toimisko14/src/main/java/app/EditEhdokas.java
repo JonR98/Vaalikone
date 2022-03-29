@@ -36,7 +36,7 @@ public class EditEhdokas extends HttpServlet {
 				int id = Integer.parseInt(idValue);
 				
 				Dao dao = new Dao();
-				Game game = dao.getGameInfo(id);
+				Ehdokas ehdokas = dao.getEhdokasInfo(id);
 				
 				session.setAttribute("game", game);
 				
