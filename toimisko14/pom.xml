@@ -97,26 +97,12 @@
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>2.0.4</version>
         </dependency>
-        <!-- Test Dependencies -->
-            
-        <dependency>
-                  
-            <groupId>junit</groupId>
-                  
-            <artifactId>junit</artifactId>
-                  
-            <version>4.12</version>
-                  
-            <scope>test</scope>
-                
-        </dependency>
-          
-          <!-- This is needed to be able to connect to MySQL database. -->
+                 <!-- This is needed to be able to connect to MySQL database. -->
 <!-- If using MySQL 8, the version should be 8.0.11. -->
 	<dependency>
 		<groupId>mysql</groupId>
 		<artifactId>mysql-connector-java</artifactId>
-		<version>5.1.6</version>
+		<version>8.0.28</version>
 	</dependency>
 	
 <!-- The next two are needed to be able to manage database with JPA. 
@@ -154,6 +140,21 @@ These are moved to servlet api and not any more in Java SE API
     <version>1.1.1</version>
 </dependency>
           
+        <!-- Test Dependencies -->
+            
+        <dependency>
+                  
+            <groupId>junit</groupId>
+                  
+            <artifactId>junit</artifactId>
+                  
+            <version>4.12</version>
+                  
+            <scope>test</scope>
+                
+        </dependency>
+          
+ 
     </dependencies>
       
     <build>
