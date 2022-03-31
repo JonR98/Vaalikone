@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import app.dao.Dao;
 import app.model.Ehdokas;
-import app.model.Game;
+
 
 @WebServlet(
 		name = "ShowData",
