@@ -40,7 +40,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into ehdokkaat(Sukunimi, Etunimi, Puolue, Kotipaikkakunta, Ika, Miksi_eduskuntaan?, Mita_asioita_haluat_edistaa) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+")");
+			count=stmt.executeUpdate("insert into ehdokkaat(Sukunimi, Etunimi, Puolue, Kotipaikkakunta, Ika, Miksi_eduskuntaan?, Mita_asioita_haluat_edistaa) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+"', "+ehdokas.getPuolue()+"', "+ehdokas.getKotipaikkakunta()+"', "+ehdokas.getIka()+"', "+ehdokas.getMiksi_eduskuntaan()+"', "+ehdokas.getMita_asioita_haluat_edistaa());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
