@@ -14,7 +14,7 @@
 
 	<form action='./editehdokas' method='post'>
 		sukunimi:<input type='text' name='sukunimi' value='${sessionScope.ehdokas.sukunimi }'><br>
-		etunimi:<input type='text' name='etunimi' value='${sessionScope.ehdokas. }'><br>
+		etunimi:<input type='text' name='etunimi' value='${sessionScope.ehdokas.etunimi }'><br>
 		puolue:<input type='text' name='puolue' value='${sessionScope.ehdokas.puolue }'><br>
 		kotipaikkakunta:<input type='text' name='kotipaikkakunta' value='${sessionScope.ehdokas.kotipaikkakunta }'><br>
 		ika:<input type='text' name='ika' value='${sessionScope.ehdokas.ika }'><br>
