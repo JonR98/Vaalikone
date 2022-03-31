@@ -58,7 +58,7 @@ public class AddEhdokas extends HttpServlet {
 		ArrayList<Ehdokas> list=dao.readAllEhdokas();
 		
 		// print output and close connection
-		printGameList(out, list);
+		printEhdokasList(out, list);
 		dao.close();
 		
 		
@@ -88,7 +88,7 @@ public class AddEhdokas extends HttpServlet {
 		return ehdokas;
 	}
 	
-	private void printGameList(PrintWriter out, ArrayList<Ehdokas> list) {
+	private void printEhdokasList(PrintWriter out, ArrayList<Ehdokas> list) {
 		out.println("<ul>");
 		for (Ehdokas g:list) {
 			out.println("<li>"+g);
