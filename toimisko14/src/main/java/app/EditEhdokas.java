@@ -38,7 +38,7 @@ public class EditEhdokas extends HttpServlet {
 				Dao dao = new Dao();
 				Ehdokas ehdokas = dao.getEhdokasInfo(id);
 				
-				session.setAttribute("game", game);
+				session.setAttribute("ehdokas", ehdokas);
 				
 				RequestDispatcher rd = request.getRequestDispatcher("jsp/editform.jsp");
 				rd.forward(request, response);
@@ -76,9 +76,15 @@ public class EditEhdokas extends HttpServlet {
 	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Ehdokas ehdokas=new Ehdokas();
-		game.setBreed(request.getParameter("breed"));
-		game.setWeight(request.getParameter("weight"));
-		game.setId(Integer.parseInt(request.getParameter("id")));
-		return game;
+		ehdokas.setId(Integer.parseInt(request.getParameter("id")));
+		ehdokas.setEtunimi(request.getParameter("etunimi"));
+		ehdokas.setSukunimi(request.getParameter("sukunimi"));
+		ehdokas.setPuolue(request.getParameter("puolue"));
+		ehdokas.setKotipaikkakunta(request.getParameter("kotipaikkakunta"));
+		ehdokas.setIka(Integer.parseInt(request.getParameter("ika")));
+		ehdokas.setMiksi_eduskuntaan(request.getParameter("miksi_eduskuntaan"));
+		ehdokas.setMita_asioita_haluat_edistaa(request.getParameter("mita_asioita_haluat_edistaa"));
+		ehdokas.setAmmatti(request.getParameter("ammatti"));
+		return ehdokas;
 	}
 }

@@ -79,7 +79,7 @@ public class Dao {
 	
 	public int updateEhdokas(Ehdokas ehdokas) {
 		int count = 0;
-		String sql = "update ehdokkaat set breed = ?, weight = ? where id = ?";
+		String sql = "update ehdokkaat set Etunimi = ?, Sukunimi = ?, Puolue = ?, Kotipaikkakunta = ?, Miksi_eduskuntaan = ?, Mita_asioita_haluat_edistaa = ?, Ammatti = ?, where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
