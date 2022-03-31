@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import app.model.Game;
+import app.model.Ehdokas;
+
 
 public class Dao {
 
@@ -47,25 +48,25 @@ public class Dao {
 		return count;
 	}
 	
-	public ArrayList<Game> readAllGame() {
-		ArrayList<Game> list=new ArrayList<>();
+	public ArrayList<Ehdokas> readAllGame() {
+		ArrayList<Ehdokas> list=new ArrayList<>();
 		Statement stmt=null;
 		int count=0;
 		try {
 			stmt = conn.createStatement();
 			ResultSet rs=stmt.executeQuery("select * from ehdokkaat");
 			while (rs.next()) {
-				Game game=new Game();
-				game.setId(rs.getInt("id"));
-				game.setSukunimi(rs.getString("Sukunimi"));
-				game.setEtunimi(rs.getString("Etunimi"));
-				game.setPuolue(rs.getString("Puolue"));
-				game.setKotipaikkakunta(rs.getString("Kotipaikkakunta"));
-				game.setIka(rs.getInt("Ika"));
-				game.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
-				game.setMita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
-				game.setAmmatti(rs.getString("Ammatti"));
-				list.add(game);
+				Ehdokas ehdokas=new Ehdokas();
+				ehdokas.setId(rs.getInt("id"));
+				ehdokas.setSukunimi(rs.getString("Sukunimi"));
+				ehdokas.setEtunimi(rs.getString("Etunimi"));
+				ehdokas.setPuolue(rs.getString("Puolue"));
+				ehdokas.setKotipaikkakunta(rs.getString("Kotipaikkakunta"));
+				ehdokas.setIka(rs.getInt("Ika"));
+				ehdokas.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
+				ehdokas.setMita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
+				ehdokas.setAmmatti(rs.getString("Ammatti"));
+				list.add(ehdokas);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -74,16 +75,20 @@ public class Dao {
 		return list;
 	}
 	
-	public int updateGame(Game game) {
+	public int updateEhdokas(Ehdokas ehdokas) {
 		int count = 0;
 		String sql = "update ehdokkaat set breed = ?, weight = ? where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setString(1, game.getBreed());
-			stmt.setFloat(2, game.getWeight());
-			
-			stmt.setInt(3, game.getId());
+			stmt.setInt(1, ehdokas.getId());
+			stmt.setString(2, ehdokas.getEtunimi());
+			stmt.setFloat(3, ehdokas.getSukunimi());
+			stmt.setString(4, ehdokas.getPuolue());
+			stmt.setString(5, ehdokas.getKotipaikkakunta());
+			stmt.setString(6, ehdokas.getMiksi_eduskuntaan());
+			stmt.setString(7, ehdokas.getMita_asioita_haluat_edistaa());
+			stmt.setString(8, ehdokas.getAmmatti());
 			
 			count = stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -93,8 +98,8 @@ public class Dao {
 		return count;
 	}
 	
-	public Game getGameInfo(int id) {
-		Game result = null;
+	public Ehdokas getGameInfo(int id) {
+		Ehdokas result = null;
 		String sql = "select * from ehdokkaat where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -104,7 +109,7 @@ public class Dao {
 			ResultSet resultset = stmt.executeQuery();
 			
 			if (resultset.next()) {
-				result = new Game();
+				result = new Ehdokas();
 				result.setId(resultset.getInt("id"));
 				result.setId(resultset.getInt("id"));
 				result.setSukunimi(resultset.getString("Sukunimi"));

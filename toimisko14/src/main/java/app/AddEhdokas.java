@@ -58,7 +58,7 @@ public class AddEhdokas extends HttpServlet {
 		ArrayList<Ehdokas> list=dao.readAllEhdokas();
 		
 		// print output and close connection
-		printEhdokasList(out, list);
+		printGameList(out, list);
 		dao.close();
 		
 		
@@ -79,7 +79,7 @@ public class AddEhdokas extends HttpServlet {
 	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Ehdokas ehdokas=new Ehdokas();
-		game.setBreed(request.getParameter("breed"));
+		Ehdokas.setEtunimi(request.getParameter("etunimi"));
 		game.setWeight(request.getParameter("weight"));
 		return game;
 	}
