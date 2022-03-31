@@ -81,6 +81,6 @@ public class Ehdokas implements Serializable{
 	
 	
 	public String toString() {
-		return id+" "+etunimi+" ("+sukunimi+")";
+		return id+" "+etunimi+" "+sukunimi+" "+puolue+" "+kotipaikkakunta+" "+ika+" "+miksi_eduskuntaan+" "+mita_asioita_haluat_edistaa+" "+ammatti;
 	}
 }

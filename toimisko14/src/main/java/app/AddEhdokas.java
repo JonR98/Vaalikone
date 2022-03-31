@@ -72,16 +72,20 @@ public class AddEhdokas extends HttpServlet {
 	}
 
 
-	private Ehdokas readEhdokas(HttpServletRequest request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Ehdokas ehdokas=new Ehdokas();
-		Ehdokas.setEtunimi(request.getParameter("etunimi"));
-		game.setWeight(request.getParameter("weight"));
-		return game;
+		ehdokas.setId(request.getIntHeader("id"));
+		ehdokas.setEtunimi(request.getParameter("etunimi"));
+		ehdokas.setSukunimi(request.getParameter("sukunimi"));
+		ehdokas.setPuolue(request.getParameter("puolue"));
+		ehdokas.setKotipaikkakunta(request.getParameter("kotipaikkakunta"));
+		ehdokas.setIka(request.getIntHeader("ika"));
+		ehdokas.setMiksi_eduskuntaan(request.getParameter("miksi_eduskuntaan"));
+		ehdokas.setMita_asioita_haluat_edistaa(request.getParameter("mita_asioita_haluat_edistaa"));
+		ehdokas.setAmmatti(request.getParameter("ammatti"));
+		return ehdokas;
 	}
 	
 	private void printGameList(PrintWriter out, ArrayList<Ehdokas> list) {

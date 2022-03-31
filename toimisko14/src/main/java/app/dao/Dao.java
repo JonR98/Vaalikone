@@ -48,7 +48,9 @@ public class Dao {
 		return count;
 	}
 	
-	public ArrayList<Ehdokas> readAllGame() {
+	
+	
+	public ArrayList<Ehdokas> readAllEhdokas() {
 		ArrayList<Ehdokas> list=new ArrayList<>();
 		Statement stmt=null;
 		int count=0;
@@ -98,7 +100,7 @@ public class Dao {
 		return count;
 	}
 	
-	public Ehdokas getGameInfo(int id) {
+	public Ehdokas getEhdokasInfo(int id) {
 		Ehdokas result = null;
 		String sql = "select * from ehdokkaat where id = ?";
 		try {
