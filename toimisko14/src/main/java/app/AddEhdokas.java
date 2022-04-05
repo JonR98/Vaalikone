@@ -68,7 +68,7 @@ public class AddEhdokas extends HttpServlet {
 		
 		out.println("Kiitos vastauksista!");
 		out.println(ehdokas);
-		out.println("<br><a href='./form.html'>Back to form</a>");
+		out.println("<br><a href='./form2.html'>Vastaa kysymyksiin</a>");
 
 		/*
 		 * With a RequestDispatcher object is the htmlend.html file included to this servlet
