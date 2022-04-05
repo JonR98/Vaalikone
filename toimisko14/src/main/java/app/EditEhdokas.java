@@ -68,7 +68,7 @@ public class EditEhdokas extends HttpServlet {
 		dao.close();
 		
 		// Back to list after actions
-		//RequestDispatcher rd = request.getRequestDispatcher("/showdata");
+		//RequestDispatcher rd= request.getRequestDispatcher("/showdata");
 		//rd.forward(request, response);
 		response.sendRedirect("/showdata");
 	}
