@@ -2,7 +2,7 @@ package app;
  
 import java.io.*;
 import java.sql.SQLException;
- 
+
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
@@ -35,7 +35,7 @@ public class UserLoginServlet extends HttpServlet {
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user);
-                destPage = "/home.jsp";
+                destPage = "/jsp/home.jsp";
             } else {
                 String message = "Invalid email/password";
                 request.setAttribute("message", message);

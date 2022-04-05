@@ -11,7 +11,7 @@
 <body>
     <div style="text-align: center">
         <h1>Admin Login</h1>
-        <form action="login" method="post">
+        <form action="/login" method="post">
             <label for="email">Email:</label>
             <input name="email" size="30" />
             <br><br>
