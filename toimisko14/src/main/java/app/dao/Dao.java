@@ -1,6 +1,7 @@
 package app.dao;
 
 import java.sql.Connection;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -40,7 +41,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into ehdokkaat(sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan?, mita_asioita_haluat_edistaa) values('"+ehdokas.getsukunimi()+"', "+ehdokas.getetunimi()+"', "+ehdokas.getpuolue()+"', "+ehdokas.getkotipaikkakunta()+"', "+ehdokas.getika()+"', "+ehdokas.getmiksi_eduskuntaan()+"', "+ehdokas.getmita_asioita_haluat_edistaa());
+			count=stmt.executeUpdate("insert into ehdokkaat(sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan?, mita_asioita_haluat_edistaa, ammatti) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+"', "+ehdokas.getPuolue()+"', "+ehdokas.getKotipaikkakunta()+"', "+ehdokas.getIka()+"', "+ehdokas.getMiksi_eduskuntaan()+"', "+ehdokas.getMita_asioita_haluat_edistaa()+"', "+ehdokas.getAmmatti());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,15 +60,15 @@ public class Dao {
 			ResultSet rs=stmt.executeQuery("select * from ehdokkaat");
 			while (rs.next()) {
 				Ehdokas ehdokas=new Ehdokas();
-				ehdokas.setid(rs.getInt("id"));
-				ehdokas.setsukunimi(rs.getString("Sukunimi"));
-				ehdokas.setetunimi(rs.getString("Etunimi"));
-				ehdokas.setpuolue(rs.getString("Puolue"));
-				ehdokas.setkotipaikkakunta(rs.getString("Kotipaikkakunta"));
-				ehdokas.setika(rs.getInt("Ika"));
-				ehdokas.setmiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
-				ehdokas.setmita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
-				ehdokas.setammatti(rs.getString("Ammatti"));
+				ehdokas.setId(rs.getInt("id"));
+				ehdokas.setSukunimi(rs.getString("Sukunimi"));
+				ehdokas.setEtunimi(rs.getString("Etunimi"));
+				ehdokas.setPuolue(rs.getString("Puolue"));
+				ehdokas.setKotipaikkakunta(rs.getString("Kotipaikkakunta"));
+				ehdokas.setIka(rs.getInt("Ika"));
+				ehdokas.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
+				ehdokas.setMita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
+				ehdokas.setAmmatti(rs.getString("Ammatti"));
 				list.add(ehdokas);
 			}
 		} catch (SQLException e) {
@@ -79,18 +80,19 @@ public class Dao {
 	
 	public int updateEhdokas(Ehdokas ehdokas) {
 		int count = 0;
-		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ?, where id = ?";
+		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
-			stmt.setInt(1, ehdokas.getid());
-			stmt.setString(2, ehdokas.getetunimi());
-			stmt.setString(3, ehdokas.getsukunimi());
-			stmt.setString(4, ehdokas.getpuolue());
-			stmt.setString(5, ehdokas.getkotipaikkakunta());
-			stmt.setString(6, ehdokas.getmiksi_eduskuntaan());
-			stmt.setString(7, ehdokas.getmita_asioita_haluat_edistaa());
-			stmt.setString(8, ehdokas.getammatti());
+			//stmt.setInt(1, ehdokas.getId());
+			stmt.setString(3, ehdokas.getEtunimi());
+			stmt.setString(2, ehdokas.getSukunimi());
+			stmt.setString(4, ehdokas.getPuolue());
+			stmt.setString(5, ehdokas.getKotipaikkakunta());
+			stmt.setInt(5, ehdokas.getIka());
+			stmt.setString(6, ehdokas.getMiksi_eduskuntaan());
+			stmt.setString(7, ehdokas.getMita_asioita_haluat_edistaa());
+			stmt.setString(8, ehdokas.getAmmatti());
 			
 			count = stmt.executeUpdate();
 		} catch (SQLException e) {
@@ -112,16 +114,15 @@ public class Dao {
 			
 			if (resultset.next()) {
 				result = new Ehdokas();
-				result.setid(resultset.getInt("id"));
-				result.setid(resultset.getInt("id"));
-				result.setsukunimi(resultset.getString("sukunimi"));
-				result.setetunimi(resultset.getString("etunimi"));
-				result.setpuolue(resultset.getString("puolue"));
-				result.setkotipaikkakunta(resultset.getString("kotipaikkakunta"));
-				result.setika(resultset.getInt("ika"));
-				result.setmiksi_eduskuntaan(resultset.getString("miksi_eduskuntaan?"));
-				result.setmita_asioita_haluat_edistaa(resultset.getString("mita_asioita_haluat_edistaa"));
-				result.setammatti(resultset.getString("ammatti"));
+				result.setId(resultset.getInt("id"));
+				result.setSukunimi(resultset.getString("sukunimi"));
+				result.setEtunimi(resultset.getString("etunimi"));
+				result.setPuolue(resultset.getString("puolue"));
+				result.setKotipaikkakunta(resultset.getString("kotipaikkakunta"));
+				result.setIka(resultset.getInt("ika"));
+				result.setMiksi_eduskuntaan(resultset.getString("miksi_eduskuntaan?"));
+				result.setMita_asioita_haluat_edistaa(resultset.getString("mita_asioita_haluat_edistaa"));
+				result.setAmmatti(resultset.getString("ammatti"));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

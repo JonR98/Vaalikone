@@ -154,7 +154,12 @@ These are moved to servlet api and not any more in Java SE API
             <scope>test</scope>
                 
         </dependency>
-          
+          <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>8.0.28</version>
+		
+	</dependency>
  
     </dependencies>
       
