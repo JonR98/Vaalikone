@@ -40,7 +40,7 @@ public class Dao2 {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into kysymykset(Suomessa on liian helppo elää sosiaaliturvan varassa, Kaupan ja muiden liikkeiden aukioloajat on vapautettava., Suomessa on siirryttävä perustuloon joka korvaisi nykyisen sosiaaliturvan vähimmäistason., Tyäntekijälle on turvattava lailla minimityäaika., Ansiosidonnaisen tyättämyysturvan kestoa pitää lyhentää., Euron ulkopuolella Suomi pärjäisi paremmin., Ruoan verotusta on varaa kiristää., Valtion ja kuntien taloutta on tasapainotettava ensisijaisesti leikkaamalla menoja., Lapsilisiä on korotettava ja laitettava verolle., Suomella ei ole varaa nykyisen laajuisiin sosiaali- ja terveyspalveluihin., Nato-jäsenyys vahvistaisi Suomen turvallisuuspoliittista asemaa., Suomeen tarvitaan enemmän poliiseja., Maahanmuuttoa Suomeen on rajoitettava terrorismin uhan vuoksi., Venäjän etupiiripolitiikka on uhka Suomelle., Verkkovalvonnassa valtion turvallisuus on tärkeämpää kuin kansalaisten yksityisyyden suoja., Suomen on osallistuttava Isisin vastaiseen taisteluun kouluttamalla Irakin hallituksen joukkoja., Parantumattomasti sairaalla on oltava oikeus avustettuun kuolemaan., Terveys- ja sosiaalipalvelut on tuotettava ensijaisesti julkisina palveluina., Viranomaisten pitää puuttua lapsiperheiden ongelmiin nykyistä herkemmin.) values('"+kysymykset.getEka()+"','"+kysymykset.getToka()+"','"+kysymykset.getKolmas()+"','"+kysymykset.getNelja()+"','"+kysymykset.getViis()+"','"+kysymykset.getKuus()+"','"+kysymykset.getKuus()+"','"+kysymykset.getSeiska()+"','"+kysymykset.getKasi()+"','"+kysymykset.getYsi()+"','"+kysymykset.getKyba()+"','"+kysymykset.getYkstoist()+"','"+kysymykset.getKakstoist()+"','"+kysymykset.getKolmetoist()+"','"+kysymykset.getNeljatoist()+"','"+kysymykset.getViistoist()+"','"+kysymykset.getKuustoist()+"','"+kysymykset.getSeittemantoist()+"','"+kysymykset.getKaheksantoist()+"','"+kysymykset.getYheksantoist()+"')");
+			count=stmt.executeUpdate("insert into vastaukset2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16, 17, 18, 19) values('"+kysymykset.getEka()+"','"+kysymykset.getToka()+"','"+kysymykset.getKolmas()+"','"+kysymykset.getNelja()+"','"+kysymykset.getViis()+"','"+kysymykset.getKuus()+"','"+kysymykset.getSeiska()+"','"+kysymykset.getKasi()+"','"+kysymykset.getYsi()+"','"+kysymykset.getKyba()+"','"+kysymykset.getYkstoist()+"','"+kysymykset.getKakstoist()+"','"+kysymykset.getKolmetoist()+"','"+kysymykset.getNeljatoist()+"','"+kysymykset.getViistoist()+"','"+kysymykset.getKuustoist()+"','"+kysymykset.getSeittemantoist()+"','"+kysymykset.getKaheksantoist()+"','"+kysymykset.getYheksantoist()+"')");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -56,28 +56,29 @@ public class Dao2 {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			ResultSet rs=stmt.executeQuery("select * from kysymykset");
+			ResultSet rs=stmt.executeQuery("select * vastaukset2");
 			while (rs.next()) {
 				Kysymykset kysymykset=new Kysymykset();
-				kysymykset.setEka(rs.getString("eka"));
-				kysymykset.setToka(rs.getString("toka"));
-				kysymykset.setKolmas(rs.getString("kolmas"));
-				kysymykset.setNelja(rs.getString("nelja"));
-				kysymykset.setViis(rs.getString("Viis"));
-				kysymykset.setKuus(rs.getString("kuus"));
-				kysymykset.setSeiska(rs.getString("seiska"));
-				kysymykset.setKasi(rs.getString("kasi"));
-				kysymykset.setYsi(rs.getString("ysi"));
-				kysymykset.setKyba(rs.getString("kyba"));
-				kysymykset.setYkstoist(rs.getString("ykstoist"));
-				kysymykset.setKakstoist(rs.getString("kakstoist"));
-				kysymykset.setKolmetoist(rs.getString("kolmetoist"));
-				kysymykset.setNeljatoist(rs.getString("neljatoist"));
-				kysymykset.setViistoist(rs.getString("viistoist"));
-				kysymykset.setKuustoist(rs.getString("kuustoist"));
-				kysymykset.setSeittemantoist(rs.getString("seittemantoist"));
-				kysymykset.setKaheksantoist(rs.getString("kaheksantoist"));
-				kysymykset.setYheksantoist(rs.getString("yheksantoist"));
+				kysymykset.setId(rs.getInt("id"));
+				kysymykset.setEka(rs.getString("1"));
+				kysymykset.setToka(rs.getString("2"));
+				kysymykset.setKolmas(rs.getString("3"));
+				kysymykset.setNelja(rs.getString("4"));
+				kysymykset.setViis(rs.getString("5"));
+				kysymykset.setKuus(rs.getString("6"));
+				kysymykset.setSeiska(rs.getString("7"));
+				kysymykset.setKasi(rs.getString("8"));
+				kysymykset.setYsi(rs.getString("9"));
+				kysymykset.setKyba(rs.getString("10"));
+				kysymykset.setYkstoist(rs.getString("11"));
+				kysymykset.setKakstoist(rs.getString("12"));
+				kysymykset.setKolmetoist(rs.getString("13"));
+				kysymykset.setNeljatoist(rs.getString("14"));
+				kysymykset.setViistoist(rs.getString("15"));
+				kysymykset.setKuustoist(rs.getString("16"));
+				kysymykset.setSeittemantoist(rs.getString("17"));
+				kysymykset.setKaheksantoist(rs.getString("18"));
+				kysymykset.setYheksantoist(rs.getString("19"));
 				
 
 				list.add(kysymykset);
@@ -91,7 +92,7 @@ public class Dao2 {
 	
 	public int updateKysymykset(Kysymykset kysymykset) {
 		int count = 0;
-		String sql = "update kysymykset set Suomessa on liian helppo elää sosiaaliturvan varassa = ?, Kaupan ja muiden liikkeiden aukioloajat on vapautettava. = ?, Suomessa on siirryttävä perustuloon joka korvaisi nykyisen sosiaaliturvan vähimmäistason. = ?, Tyäntekijälle on turvattava lailla minimityäaika. = ?, Ansiosidonnaisen tyättämyysturvan kestoa pitää lyhentää. = ?, Euron ulkopuolella Suomi pärjäisi paremmin. = ?, Ruoan verotusta on varaa kiristää. = ?, Valtion ja kuntien taloutta on tasapainotettava ensisijaisesti leikkaamalla menoja. = ?, Lapsilisiä on korotettava ja laitettava verolle. = ?, Suomella ei ole varaa nykyisen laajuisiin sosiaali- ja terveyspalveluihin. = ?, Nato-jäsenyys vahvistaisi Suomen turvallisuuspoliittista asemaa. = ?, Suomeen tarvitaan enemmän poliiseja. = ?, Maahanmuuttoa Suomeen on rajoitettava terrorismin uhan vuoksi. = ?, Venäjän etupiiripolitiikka on uhka Suomelle. = ?, Verkkovalvonnassa valtion turvallisuus on tärkeämpää kuin kansalaisten yksityisyyden suoja. = ?, Suomen on osallistuttava Isisin vastaiseen taisteluun kouluttamalla Irakin hallituksen joukkoja. = ?, Parantumattomasti sairaalla on oltava oikeus avustettuun kuolemaan. = ?, Terveys- ja sosiaalipalvelut on tuotettava ensijaisesti julkisina palveluina. = ?, Viranomaisten pitää puuttua lapsiperheiden ongelmiin nykyistä herkemmin. = ?,  where ehdokas_id = ?";
+		String sql = "update vastaukset2 set 1 = ?, 2 = ?, 3 = ?, 4 = ?, 5 = ?, 6 = ?, 7 = ?, 8 = ?, 9 = ?, 10 = ?, 11 = ?, 12 = ?, 13 = ?, 14 = ?, 15 = ?, 16 = ?, 17 = ?, 18 = ?, 19 = ?  whereid = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
@@ -116,18 +117,19 @@ public class Dao2 {
 			stmt.setString(18, kysymykset.getKaheksantoist());
 			stmt.setString(19, kysymykset.getYheksantoist());
 
-			
 			count = stmt.executeUpdate();
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return count;
+		
 	}
 	
 	public Kysymykset getEhdokasInfo(int id) {
 		Kysymykset result = null;
-		String sql = "select * from ehdokkaat where id = ?";
+		String sql = "select * from vastaukset2 where id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 						

@@ -1,7 +1,14 @@
 package app.model;
 import java.io.Serializable;
 public class Kysymykset implements Serializable{
-	
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	private String eka;
 	private String toka;
 	private String kolmas;
