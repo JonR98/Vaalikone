@@ -36,7 +36,6 @@ public class ShowData extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/showall.jsp");
 		rd.forward(request, response);
-	
 	}
 	
 	@Override
