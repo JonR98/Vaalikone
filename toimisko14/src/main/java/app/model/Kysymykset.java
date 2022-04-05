@@ -1,6 +1,6 @@
 package app.model;
-
-public class Kysymykset {
+import java.io.Serializable;
+public class Kysymykset implements Serializable{
 	
 	private String eka;
 	private String toka;
@@ -86,7 +86,7 @@ public class Kysymykset {
 	public String getYkstoist() {
 		return ykstoist;
 	}
-	public void setYkstoista(String ykstoista) {
+	public void setYkstoist(String ykstoista) {
 		this.ykstoist = ykstoista;
 	}
 	public String getKakstoist() {
