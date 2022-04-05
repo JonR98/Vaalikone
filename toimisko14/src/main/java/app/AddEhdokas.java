@@ -76,10 +76,8 @@ public class AddEhdokas extends HttpServlet {
 	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Ehdokas ehdokas=new Ehdokas();
-<<<<<<< HEAD
+
 		//ehdokas.setId(Integer.parseInt(request.getParameter("id")));
-=======
->>>>>>> 0ae9ac63419d9f89a29fbe4ebb50faed7370489d
 		ehdokas.setEtunimi(request.getParameter("etunimi"));
 		ehdokas.setSukunimi(request.getParameter("sukunimi"));
 		ehdokas.setPuolue(request.getParameter("puolue"));
