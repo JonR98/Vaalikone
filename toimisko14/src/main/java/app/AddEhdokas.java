@@ -49,8 +49,8 @@ public class AddEhdokas extends HttpServlet {
 		/*
 		 * With a RequestDispatcher object is the htmlstart.html file included to this servlet
 		 */
-		//RequestDispatcher rd=request.getRequestDispatcher("staticpages/htmlstart.html");
-		//rd.include(request,  response);;
+		RequestDispatcher rd=request.getRequestDispatcher("htmlstart.html");
+		rd.include(request,  response);;
 		
 		// Read parameters to Model
 		Ehdokas ehdokas=readEhdokas(request);
@@ -73,8 +73,8 @@ public class AddEhdokas extends HttpServlet {
 		/*
 		 * With a RequestDispatcher object is the htmlend.html file included to this servlet
 		 */
-		//rd=request.getRequestDispatcher("staticpages/htmlend.html");
-		//rd.include(request,  response);;
+		rd=request.getRequestDispatcher("htmlend.html");
+		rd.include(request,  response);;
 		
 	}
 
@@ -89,7 +89,7 @@ public class AddEhdokas extends HttpServlet {
 		ehdokas.setSukunimi(request.getParameter("sukunimi"));
 		ehdokas.setPuolue(request.getParameter("puolue"));
 		ehdokas.setKotipaikkakunta(request.getParameter("kotipaikkakunta"));
-		ehdokas.setIka(Integer.parseInt(request.getParameter("Ika")));
+		ehdokas.setIka(Integer.parseInt(request.getParameter("ika")));
 		ehdokas.setMiksi_eduskuntaan(request.getParameter("miksi_eduskuntaan"));
 		ehdokas.setMita_asioita_haluat_edistaa(request.getParameter("mita_asioita_haluat_edistaa"));
 		ehdokas.setAmmatti(request.getParameter("ammatti"));
