@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Ehdokas implements Serializable{
 	private int id;
 	private String etunimi;
-	private float sukunimi;
+	private String sukunimi;
 	private String puolue;
 	private String kotipaikkakunta;
 	private int ika;
@@ -59,25 +59,18 @@ public class Ehdokas implements Serializable{
 		this.id = id;
 	}
 	public String getEtunimi() {
-		return getEtunimi();
+		return this.etunimi;
 	}
 	public void setEtunimi(String etunimi) {
 		this.etunimi = etunimi;
 	}
-	public float getSukunimi() {
-		return getSukunimi();
+	public String getSukunimi() {
+		return this.sukunimi;
 	}
-	public void setSukunimi(float sukunimi) {
+	public void setSukunimi(String sukunimi) {
 		this.sukunimi = sukunimi;
 	}
-	public void setSukunimi(String s) {
-		try {
-			this.sukunimi=Float.parseFloat(s);
-		}
-		catch(NumberFormatException e) {
-			this.sukunimi=0;
-		}
-	}
+	
 	
 	
 	public String toString() {

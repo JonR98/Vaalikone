@@ -85,7 +85,7 @@ public class Dao {
 			
 			stmt.setInt(1, ehdokas.getId());
 			stmt.setString(2, ehdokas.getEtunimi());
-			stmt.setFloat(3, ehdokas.getSukunimi());
+			stmt.setString(3, ehdokas.getSukunimi());
 			stmt.setString(4, ehdokas.getPuolue());
 			stmt.setString(5, ehdokas.getKotipaikkakunta());
 			stmt.setString(6, ehdokas.getMiksi_eduskuntaan());
@@ -130,4 +130,4 @@ public class Dao {
 		return result;
 	}
 }
-
+// COmment
