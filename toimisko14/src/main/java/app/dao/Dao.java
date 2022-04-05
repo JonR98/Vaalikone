@@ -40,7 +40,7 @@ public class Dao {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into ehdokkaat(Sukunimi, Etunimi, Puolue, Kotipaikkakunta, Ika, Miksi_eduskuntaan?, Mita_asioita_haluat_edistaa) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+"', "+ehdokas.getPuolue()+"', "+ehdokas.getKotipaikkakunta()+"', "+ehdokas.getIka()+"', "+ehdokas.getMiksi_eduskuntaan()+"', "+ehdokas.getMita_asioita_haluat_edistaa());
+			count=stmt.executeUpdate("insert into ehdokkaat(sukunimi, etunimi, puolue, kotipaikkakunta, ika, miksi_eduskuntaan?, mita_asioita_haluat_edistaa) values('"+ehdokas.getSukunimi()+"', "+ehdokas.getEtunimi()+"', "+ehdokas.getPuolue()+"', "+ehdokas.getKotipaikkakunta()+"', "+ehdokas.getIka()+"', "+ehdokas.getMiksi_eduskuntaan()+"', "+ehdokas.getMita_asioita_haluat_edistaa());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -85,7 +85,7 @@ public class Dao {
 			
 			stmt.setInt(1, ehdokas.getId());
 			stmt.setString(2, ehdokas.getEtunimi());
-			stmt.setFloat(3, ehdokas.getSukunimi());
+			stmt.setString(3, ehdokas.getSukunimi());
 			stmt.setString(4, ehdokas.getPuolue());
 			stmt.setString(5, ehdokas.getKotipaikkakunta());
 			stmt.setString(6, ehdokas.getMiksi_eduskuntaan());

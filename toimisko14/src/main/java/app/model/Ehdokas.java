@@ -64,7 +64,7 @@ public class Ehdokas implements Serializable{
 	public void setEtunimi(String etunimi) {
 		this.etunimi = etunimi;
 	}
-	public float getSukunimi() {
+	public String getSukunimi() {
 		return getSukunimi();
 	}
 	public void setSukunimi(String sukunimi) {
