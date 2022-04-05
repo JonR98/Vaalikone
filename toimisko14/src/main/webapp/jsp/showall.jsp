@@ -27,7 +27,7 @@
 	<th>Mita_asioita_haluat_edistaa</th>
 	<th>Ammatti</th>
 </tr>
-<c:forEach var="game" items="${sessionScope.allgames }">
+<c:forEach var="ehdokas" items="${sessionScope.allgames }">
 	<tr>
 		<td>${ehdokas.id }</td>
 		<td>${ehdokas.sukunimi }</td>

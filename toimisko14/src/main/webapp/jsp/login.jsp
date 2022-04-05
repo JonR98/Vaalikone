@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Vaalikone website</title>s
+<title>Vaalikone website</title>
 </head>
 <body>
     <div style="text-align: center">
