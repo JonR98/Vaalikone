@@ -8,9 +8,11 @@
 </head>
 <body>
     <div style="text-align: center">
-        <h1>Welcome to Vaalikone Admin Panel</h1>
+        <h1>Vaalikoneen admin osio</h1>
         <b>${user.fullname} (${user.email})</b>
         <br><br>
+        <a href="/form.html">Muokkaa ehdokasta</a>
+        <a href="/form.html">Lisää ehdokas</a>
         <a href="/logout">Logout</a>
     </div>
 </body>
