@@ -1,8 +1,21 @@
 package app;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-
-public class AddKysymykset {
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+import app.model.Kysymykset;
+import app.dao.Dao2;
 
 	/*
 	 * The name of the servlet is AddKysymykset
@@ -39,15 +52,15 @@ public class AddKysymykset {
 			 Kysymykset kysymykset =readKysymykset(request);
 		
 			// Create connection
-			Dao dao=new Dao();
+			Dao2 dao2=new Dao2();
 			
 			// Save value and query total list
-			dao.saveKysymykset(kysymykset);
-			ArrayList<Kysymykset> list=dao.readAllKysymkset();
+			dao2.saveKysymykset(kysymykset);
+			ArrayList<Kysymykset> list=dao2.readAllKysymykset();
 			
 			// print output and close connection
 			printKysymyksetList(out, list);
-			dao.close();
+			dao2.close();
 			
 			out.println("Kiitos vastauksista!");
 			out.println(kysymykset);
