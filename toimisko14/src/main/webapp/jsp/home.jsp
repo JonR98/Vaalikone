@@ -13,6 +13,7 @@
         <br><br>
         <a href="/form.html">Muokkaa ehdokasta</a>
         <a href="/form.html">Lisää ehdokas</a>
+        <a href="/form2.html">Lisää kysymyksiä</a>
         <a href="/logout">Logout</a>
     </div>
 </body>
