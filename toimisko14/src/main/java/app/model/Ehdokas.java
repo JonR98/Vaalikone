@@ -16,58 +16,58 @@ public class Ehdokas implements Serializable{
 	
 
 
-	public String getPuolue() {
+	public String getpuolue() {
 		return puolue;
 	}
-	public void setPuolue(String puolue) {
+	public void setpuolue(String puolue) {
 		this.puolue = puolue;
 	}
-	public String getKotipaikkakunta() {
+	public String getkotipaikkakunta() {
 		return kotipaikkakunta;
 	}
-	public void setKotipaikkakunta(String kotipaikkakunta) {
+	public void setkotipaikkakunta(String kotipaikkakunta) {
 		this.kotipaikkakunta = kotipaikkakunta;
 	}
-	public int getIka() {
+	public int getika() {
 		return ika;
 	}
-	public void setIka(int ika) {
+	public void setika(int ika) {
 		this.ika = ika;
 	}
-	public String getMiksi_eduskuntaan() {
+	public String getmiksi_eduskuntaan() {
 		return miksi_eduskuntaan;
 	}
-	public void setMiksi_eduskuntaan(String miksi_eduskuntaan) {
+	public void setmiksi_eduskuntaan(String miksi_eduskuntaan) {
 		this.miksi_eduskuntaan = miksi_eduskuntaan;
 	}
-	public String getMita_asioita_haluat_edistaa() {
+	public String getmita_asioita_haluat_edistaa() {
 		return mita_asioita_haluat_edistaa;
 	}
-	public void setMita_asioita_haluat_edistaa(String mita_asioita_haluat_edistaa) {
+	public void setmita_asioita_haluat_edistaa(String mita_asioita_haluat_edistaa) {
 		this.mita_asioita_haluat_edistaa = mita_asioita_haluat_edistaa;
 	}
-	public String getAmmatti() {
+	public String getammatti() {
 		return ammatti;
 	}
-	public void setAmmatti(String ammatti) {
+	public void setammatti(String ammatti) {
 		this.ammatti = ammatti;
 	}
-	public int getId() {
+	public int getid() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setid(int id) {
 		this.id = id;
 	}
-	public String getEtunimi() {
+	public String getetunimi() {
 		return this.etunimi;
 	}
-	public void setEtunimi(String etunimi) {
+	public void setetunimi(String etunimi) {
 		this.etunimi = etunimi;
 	}
-	public String getSukunimi() {
+	public String getsukunimi() {
 		return this.sukunimi;
 	}
-	public void setSukunimi(String sukunimi) {
+	public void setsukunimi(String sukunimi) {
 		this.sukunimi = sukunimi;
 	}
 	
