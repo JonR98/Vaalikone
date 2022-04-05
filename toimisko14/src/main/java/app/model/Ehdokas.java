@@ -77,3 +77,4 @@ public class Ehdokas implements Serializable{
 		return id+" "+etunimi+" "+sukunimi+" "+puolue+" "+kotipaikkakunta+" "+ika+" "+miksi_eduskuntaan+" "+mita_asioita_haluat_edistaa+" "+ammatti;
 	}
 }
+
