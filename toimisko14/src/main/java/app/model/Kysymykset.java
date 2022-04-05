@@ -1,13 +1,7 @@
 package app.model;
 import java.io.Serializable;
 public class Kysymykset implements Serializable{
-	private int id;
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 
 	private String eka;
 	private String toka;
@@ -144,7 +138,13 @@ public class Kysymykset implements Serializable{
 	public void setYheksantoist(String yheksantoist) {
 		this.yheksantoist = yheksantoist;
 	}
-	
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String toString() {
 		return eka+" "+toka+" "+kolmas+" "+nelja+" "+viis+" "+kuus+" "+seiska+" "+kasi+" "+ysi+" "+kyba+" "+ykstoist+" "+kakstoist+" "+kolmetoist+" "+neljatoist+" "+viistoist+" "+kuustoist+" "+seittemantoist+" "+kaheksantoist+" "+yheksantoist;
 		

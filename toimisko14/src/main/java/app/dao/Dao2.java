@@ -40,7 +40,7 @@ public class Dao2 {
 		int count=0;
 		try {
 			stmt = conn.createStatement();
-			count=stmt.executeUpdate("insert into vastaukset2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16, 17, 18, 19) values('"+kysymykset.getEka()+"','"+kysymykset.getToka()+"','"+kysymykset.getKolmas()+"','"+kysymykset.getNelja()+"','"+kysymykset.getViis()+"','"+kysymykset.getKuus()+"','"+kysymykset.getSeiska()+"','"+kysymykset.getKasi()+"','"+kysymykset.getYsi()+"','"+kysymykset.getKyba()+"','"+kysymykset.getYkstoist()+"','"+kysymykset.getKakstoist()+"','"+kysymykset.getKolmetoist()+"','"+kysymykset.getNeljatoist()+"','"+kysymykset.getViistoist()+"','"+kysymykset.getKuustoist()+"','"+kysymykset.getSeittemantoist()+"','"+kysymykset.getKaheksantoist()+"','"+kysymykset.getYheksantoist()+"')");
+			count=stmt.executeUpdate("insert into vastaukset2(id, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ,16, 17, 18, 19) values('"+kysymykset.getEka()+"','"+kysymykset.getToka()+"','"+kysymykset.getKolmas()+"','"+kysymykset.getNelja()+"','"+kysymykset.getViis()+"','"+kysymykset.getKuus()+"','"+kysymykset.getSeiska()+"','"+kysymykset.getKasi()+"','"+kysymykset.getYsi()+"','"+kysymykset.getKyba()+"','"+kysymykset.getYkstoist()+"','"+kysymykset.getKakstoist()+"','"+kysymykset.getKolmetoist()+"','"+kysymykset.getNeljatoist()+"','"+kysymykset.getViistoist()+"','"+kysymykset.getKuustoist()+"','"+kysymykset.getSeittemantoist()+"','"+kysymykset.getKaheksantoist()+"','"+kysymykset.getYheksantoist()+"')");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -127,7 +127,7 @@ public class Dao2 {
 		
 	}
 	
-	public Kysymykset getEhdokasInfo(int id) {
+	public Kysymykset getKysymyksetInfo(int id) {
 		Kysymykset result = null;
 		String sql = "select * from vastaukset2 where id = ?";
 		try {
