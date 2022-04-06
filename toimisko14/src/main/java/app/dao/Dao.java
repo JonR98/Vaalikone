@@ -66,7 +66,7 @@ public class Dao {
 				ehdokas.setPuolue(rs.getString("Puolue"));
 				ehdokas.setKotipaikkakunta(rs.getString("Kotipaikkakunta"));
 				ehdokas.setIka(rs.getInt("Ika"));
-				ehdokas.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan?"));
+				ehdokas.setMiksi_eduskuntaan(rs.getString("Miksi_eduskuntaan"));
 				ehdokas.setMita_asioita_haluat_edistaa(rs.getString("Mita_asioita_haluat_edistaa"));
 				ehdokas.setAmmatti(rs.getString("Ammatti"));
 				list.add(ehdokas);
@@ -80,7 +80,7 @@ public class Dao {
 	
 	public int updateEhdokas(Ehdokas ehdokas) {
 		int count = 0;
-		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ? where ehdokas_id = ?";
+		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, ika = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ? where ehdokas_id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			
@@ -106,7 +106,7 @@ public class Dao {
 	
 	public Ehdokas getEhdokasInfo(int id) {
 		Ehdokas result = null;
-		String sql = "select * from ehdokkaat where id = ?";
+		String sql = "select * from ehdokkaat where ehdokas_id = ?";
 		try {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 						
@@ -116,13 +116,13 @@ public class Dao {
 			
 			if (resultset.next()) {
 				result = new Ehdokas();
-				result.setId(resultset.getInt("id"));
+				result.setId(resultset.getInt("ehdokas_id"));
 				result.setSukunimi(resultset.getString("sukunimi"));
 				result.setEtunimi(resultset.getString("etunimi"));
 				result.setPuolue(resultset.getString("puolue"));
 				result.setKotipaikkakunta(resultset.getString("kotipaikkakunta"));
 				result.setIka(resultset.getInt("ika"));
-				result.setMiksi_eduskuntaan(resultset.getString("miksi_eduskuntaan?"));
+				result.setMiksi_eduskuntaan(resultset.getString("miksi_eduskuntaan"));
 				result.setMita_asioita_haluat_edistaa(resultset.getString("mita_asioita_haluat_edistaa"));
 				result.setAmmatti(resultset.getString("ammatti"));
 			}

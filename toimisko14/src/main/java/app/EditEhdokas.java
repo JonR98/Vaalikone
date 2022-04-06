@@ -30,7 +30,7 @@ public class EditEhdokas extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		String idValue = request.getParameter("id");
-		
+		System.out.println(idValue);
 		if ( idValue != null ) {
 			try {
 				int id = Integer.parseInt(idValue);
@@ -70,12 +70,13 @@ public class EditEhdokas extends HttpServlet {
 		// Back to list after actions
 		RequestDispatcher rd = request.getRequestDispatcher("/showdata");
 		rd.forward(request, response);
-		response.sendRedirect("/showdata");
+		//response.sendRedirect("/showdata");
 	}
 	
 	private Ehdokas readEhdokas(HttpServletRequest request) {
 		// TODO Auto-generated method stub
 		Ehdokas ehdokas=new Ehdokas();
+		System.out.println(request.getParameter("id"));
 		ehdokas.setId(Integer.parseInt(request.getParameter("id")));
 		ehdokas.setEtunimi(request.getParameter("etunimi"));
 		ehdokas.setSukunimi(request.getParameter("sukunimi"));
