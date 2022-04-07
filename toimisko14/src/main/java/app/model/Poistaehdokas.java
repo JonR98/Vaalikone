@@ -91,8 +91,8 @@ private Ehdokas readEhdokas(HttpServletRequest request) {
 		ehdokas.setAmmatti(request.getParameter("ammatti"));
 		return ehdokas;
 	}
-	public ResultSet getEhdokasInfo(int id, Connection conn) {
-		String sql="delete from ehdokas where ehdokas_id=?";
+	public ResultSet getEhdokasInfo(int id,Connection conn) {
+		String sql="delete from ehdokas where etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, ika = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ? where ehdokas_id = ?\";";
 		try {
 			PreparedStatement pstmt=conn.prepareStatement(sql);
 			pstmt.executeUpdate();
@@ -105,6 +105,7 @@ private Ehdokas readEhdokas(HttpServletRequest request) {
 			e.printStackTrace();
 		}
 		return null;
+		
 	}
 	
 }
