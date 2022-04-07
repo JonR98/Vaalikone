@@ -40,6 +40,7 @@
 		<td>${ehdokas.ammatti }</td>
 		<td>
 			<a href="/editehdokas?id=${ehdokas.id }">Edit</a>
+			<a href="/poistaehdokas?id=${ehdokas.id}">Delete</a> 
 		</td>
 	</tr>
 </c:forEach>
