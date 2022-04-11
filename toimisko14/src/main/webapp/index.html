@@ -2,22 +2,37 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
-    <title>Hello App Engine</title>
+    <title>Vaalikone</title>
+    <style>
+    h1{
+    padding: 60px;
+    text-align:center;
+    }
+    footer{
+    padding: 300px;
+    text-align:center;
+    }
+    body{
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3DxW4tNRKMFo1LSuqJwXFdWDqfx2Jkw6hxg&usqp=CAU");
+    }
+    th{
+    background-color:white;
+    }
+    </style>
+    
   </head>
 
   <body>
-    <h1>Vaalikone</h1>
+    <h1><u>Vaalikone</u></h1>
 
-    <table>
-      <tr>
-        <td colspan="2" style="font-weight:bold;">Servletit</td>        
-      </tr>
+    <table style="width:90%">
 		<tr>
-        <td><a href='/showehdokkaat'>Näytä ehdokkaat</a></td>
-      </tr>
-      <tr>
-        <td><a href='/jsp/login.jsp'>Admin login</a></td>
+        <th><a href='/showehdokkaat'>Näytä ehdokkaat</a></th>
+        <th><a href='/jsp/login.jsp'>Admin login</a></th>
       </tr>
     </table>
+          <footer>
+      © Joona Rinta-Könnö, Joni Repo & Christian Torkkeli
+      </footer>
   </body>
 </html>
