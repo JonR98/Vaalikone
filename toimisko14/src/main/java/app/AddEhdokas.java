@@ -63,11 +63,11 @@ public class AddEhdokas extends HttpServlet {
 		ArrayList<Ehdokas> list=dao.readAllEhdokas();
 		
 		// print output and close connection
-		printEhdokasList(out, list);
+		//printEhdokasList(out, list);
 		dao.close();
 		
 		out.println("Kiitos vastauksista!");
-		out.println("<br><a href='./showdata'>Vastaa kysymyksiin</a>");
+		out.println("<br><a href='./showdata'>Katso ehdokkaat</a>");
 
 		/*
 		 * With a RequestDispatcher object is the htmlend.html file included to this servlet
@@ -100,7 +100,7 @@ public class AddEhdokas extends HttpServlet {
 		for (Ehdokas g:list) {
 			out.println("<li>"+g);
 		}
-		out.println("</ul>");
+		
 	}
 
 }
