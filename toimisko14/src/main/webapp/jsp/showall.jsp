@@ -17,7 +17,7 @@
 
 <table>
 <tr>
-	<th>ID</th>
+	<th>Äänestysnumero</th>
 	<th>Sukunimi</th>
 	<th>Etunimi</th>
 	<th>Puolue</th>
