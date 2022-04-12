@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import app.model.Ehdokas;
 
-
+//made by Joona & Joni
 public class Dao {
 
 	private Connection conn;
@@ -35,7 +35,7 @@ public class Dao {
 			e.printStackTrace();
 		}
 	}
-
+	// Tallentaa ehdokkaat tietokantaan syötetyt tiedot tietokantaan
 	public int saveEhdokas(Ehdokas ehdokas) {
 		Statement stmt=null;
 		int count=0;
@@ -50,7 +50,7 @@ public class Dao {
 	}
 	
 	
-	
+	// Lukee ehdokkaat tauluun laitetut tiedot ja lisää ne arraylistiin
 	public ArrayList<Ehdokas> readAllEhdokas() {
 		ArrayList<Ehdokas> list=new ArrayList<>();
 		Statement stmt=null;
@@ -77,7 +77,7 @@ public class Dao {
 		}
 		return list;
 	}
-	
+	//Päivittää tietokantaan ehdokkaat syötetyt tiedot
 	public int updateEhdokas(Ehdokas ehdokas) {
 		int count = 0;
 		String sql = "update ehdokkaat set etunimi = ?, sukunimi = ?, puolue = ?, kotipaikkakunta = ?, ika = ?, miksi_eduskuntaan = ?, mita_asioita_haluat_edistaa = ?, ammatti = ? where ehdokas_id = ?";
@@ -103,7 +103,7 @@ public class Dao {
 		}
 		return count;
 	}
-	
+	//Näyttää tietokannan tiedot
 	public Ehdokas getEhdokasInfo(int id) {
 		Ehdokas result = null;
 		String sql = "select * from ehdokkaat where ehdokas_id = ?";
@@ -132,6 +132,7 @@ public class Dao {
 		}
 		return result;
 	}
+		//Poistaa ehdokkaan tietokannasta metodi
 		public void Poistaehdokas(int ehdokas_id) {
 	        String sql = "delete from ehdokkaat where ehdokas_id=?";
 	        try {

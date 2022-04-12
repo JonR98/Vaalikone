@@ -19,7 +19,7 @@ import app.dao.Dao;
 import app.model.Ehdokas;
 
 
-
+// made by Christian Torkkeli
 
 /*
  * The name of the servlet is AddEhdokas
@@ -94,7 +94,7 @@ public class AddEhdokas extends HttpServlet {
 		ehdokas.setAmmatti(request.getParameter("ammatti"));
 		return ehdokas;
 	}
-	
+	//metodi joka tulostaa listan
 	private void printEhdokasList(PrintWriter out, ArrayList<Ehdokas> list) {
 		out.println("<ul>");
 		for (Ehdokas g:list) {

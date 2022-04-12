@@ -20,6 +20,9 @@ import app.model.Ehdokas;
 		name = "showehdokkaat",
 		urlPatterns = {"/showehdokkaat"}
 		)
+
+//Made by Christian Torkkeli & Joni Repo
+
 public class ShowEhdokkaat extends HttpServlet {
 	
 	@Override

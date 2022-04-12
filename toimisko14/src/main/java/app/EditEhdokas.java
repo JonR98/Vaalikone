@@ -24,6 +24,9 @@ import app.model.Ehdokas;
 		name = "EditEhdokas",
 		urlPatterns = {"/editehdokas"}
 		)
+
+//Made by Joni Repo, Joona Rinta-Könnö
+
 public class EditEhdokas extends HttpServlet {
 	private Connection conn;
 	

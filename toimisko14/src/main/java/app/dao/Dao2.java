@@ -10,6 +10,17 @@ import java.util.ArrayList;
 import app.model.Kysymykset;
 
 
+
+
+
+
+
+//TURHA TIEDOSTO, ei poistettu varmuuden vuoksi ettei ohjelma hajoa
+//!
+//!
+//!
+
+
 public class Dao2 {
 
 	private Connection conn;

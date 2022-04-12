@@ -10,6 +10,8 @@ import javax.servlet.http.*;
 import app.dao.UserDao;
 import app.model.Users;
  
+//Made by Joona Rinta-Könnö
+
 @WebServlet(
 		name = "UserLoginServlet",
 		urlPatterns = {"/login"}
@@ -27,7 +29,7 @@ public class UserLoginServlet extends HttpServlet {
         String password = request.getParameter("password");
          
         UserDao userDao = new UserDao();
-         
+         //tarkistaa onko tunnukset syötetty oikein, jos ei ole niin antaa errorin
         try {
             Users user = userDao.checkLogin(email, password);
             String destPage = "/login.jsp";

@@ -17,7 +17,14 @@ import javax.servlet.annotation.WebServlet;
 import app.model.Kysymykset;
 import app.dao.Dao2;
 
-	/*
+//TURHA TIEDOSTO, EI POISTETTU VARMUUDEN VUOKSI
+//!
+//!
+
+
+
+
+/*
 	 * The name of the servlet is AddKysymykset
 	 * and the servlet's URI (url-pattern) is 'addkysymykset'
 	 */

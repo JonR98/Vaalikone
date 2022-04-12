@@ -16,6 +16,10 @@ import app.model.Ehdokas;
 		name = "Poistaehdokas",
 		urlPatterns = {"/poistaehdokas"}
 		)
+
+
+// Made by Joni Repo
+
 public class Poistaehdokas extends HttpServlet{
 	
 		

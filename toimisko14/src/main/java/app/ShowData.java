@@ -33,12 +33,13 @@ public class ShowData extends HttpServlet {
 		ArrayList<Ehdokas> ehdokas = dao.readAllEhdokas();
 		
 		session.setAttribute("ehdokas", ehdokas);
-		
+		//pyytää tietoja showall.jsp tiedostosta
 		RequestDispatcher rd = request.getRequestDispatcher("jsp/showall.jsp");
 		rd.forward(request, response);
 	}
 	
 	@Override
+	//lähettää tiedot eteenpäin
 	public void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws IOException, ServletException {
 		doGet(request, response);

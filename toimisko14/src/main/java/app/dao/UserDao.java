@@ -4,8 +4,10 @@ import java.sql.*;
 
 import app.model.Users;
  
+// Made by Joona Rinta-Könnö
+
 public class UserDao {
- 
+ //tarkistaa tietokannasta onko kirjautumistiedot adminilla oikein.
     public Users checkLogin(String email, String password) throws SQLException,
             ClassNotFoundException {
         String jdbcURL = "jdbc:mysql://localhost:3306/vaalikone";
