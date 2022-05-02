@@ -140,6 +140,28 @@ These are moved to servlet api and not any more in Java SE API
     <artifactId>activation</artifactId>
     <version>1.1.1</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/org.eclipse.persistence/eclipselink 
+	Eclipselink JPA Implementation 
+-->
+<dependency>
+    <groupId>org.eclipse.persistence</groupId>
+    <artifactId>eclipselink</artifactId>
+    <version>2.5.0</version>
+</dependency>
+<!-- 
+If using Java 11 or newer add next two.
+These are moved to servlet api and not any more in Java SE API 
+ -->
+<dependency>
+    <groupId>javax.xml.bind</groupId>
+    <artifactId>jaxb-api</artifactId>
+    <version>2.3.0</version>
+</dependency>
+<dependency>
+    <groupId>javax.activation</groupId>
+    <artifactId>activation</artifactId>
+    <version>1.1.1</version>
+</dependency>
           
         <!-- Test Dependencies -->
             
