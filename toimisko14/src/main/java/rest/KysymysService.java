@@ -16,75 +16,75 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import data.Fish;
+import app.model.Kysymykset;
 
-@Path("/fishservice")
+@Path("/kysymysservice")
 public class KysymysService {
-	EntityManagerFactory emf=Persistence.createEntityManagerFactory("jpafishapp");
+	EntityManagerFactory emf=Persistence.createEntityManagerFactory("toimisko14");
 	@GET
-	@Path("/readfish")
+	@Path("/readkysymyksetkysymykset")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Fish> readFish() {
+	public List<Kysymykset> readKysymykset() {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<Fish> list=em.createQuery("select xyx from Fish xyx").getResultList();		
+		List<Kysymykset> list=em.createQuery("select xyx from kysymykset xyx").getResultList();		
 		em.getTransaction().commit();
 		return list;
 	}	
 	@POST
-	@Path("/addfish")
+	@Path("/addkysymykset")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Fish> addFish(Fish fish) {
+	public List<Kysymykset> addKysymykset(Kysymykset kysymykset) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		em.persist(fish);//The actual insertion line
+		em.persist(kysymykset);//The actual insertion line
 		em.getTransaction().commit();
 		//Calling the method readFish() of this service
-		List<Fish> list=readFish();		
+		List<Kysymykset> list=readKysymykset();		
 		return list;
 	}	
 	@PUT
-	@Path("/updatefish")
+	@Path("/updatekysymykset")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Fish> updateFish(Fish fish) {
+	public List<Kysymykset> updateKysymykset(Kysymykset kysymykset) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		Fish f=em.find(Fish.class, fish.getId());
+		Kysymykset f=em.find(Kysymykset.class, kysymykset.getId());
 		if (f!=null) {
-			em.merge(fish);//The actual update line
+			em.merge(kysymykset);//The actual update line
 		}
 		em.getTransaction().commit();
 		//Calling the method readFish() of this service
-		List<Fish> list=readFish();		
+		List<Kysymykset> list=readKysymykset();		
 		return list;
 	}	
 	@DELETE
-	@Path("/deletefish/{id}")
+	@Path("/deletekysymykset/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Fish> deleteFish(@PathParam("id") int id) {
+	public List<Kysymykset> deleteKysymykset(@PathParam("id") int id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		Fish f=em.find(Fish.class, id);
+		Kysymykset f=em.find(Kysymykset.class, id);
 		if (f!=null) {
 			em.remove(f);//The actual insertion line
 		}
 		em.getTransaction().commit();
 		//Calling the method readFish() of this service
-		List<Fish> list=readFish();		
+		List<Kysymykset> list=readKysymykset();		
 		return list;
 	}	
 	@GET
-	@Path("/readtoupdatefish/{id}")
+	@Path("/readtoupdatekysymykset/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Fish readToUpdateFish(@PathParam("id") int id) {
+	public Kysymykset readToUpdateKysymykset(@PathParam("id") int id) {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		Fish f=em.find(Fish.class, id);
+		Kysymykset f=em.find(Kysymykset.class, id);
 		em.getTransaction().commit();
 		return f;
 	}	
