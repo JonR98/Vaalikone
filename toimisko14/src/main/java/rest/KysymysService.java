@@ -22,7 +22,7 @@ import app.model.Kysymykset;
 public class KysymysService {
 	EntityManagerFactory emf=Persistence.createEntityManagerFactory("toimisko14");
 	@GET
-	@Path("/readkysymyksetkysymykset")
+	@Path("/readkysymykset")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 	public List<Kysymykset> readKysymykset() {
