@@ -28,7 +28,7 @@ public class KysymysService {
 	public List<Kysymykset> readKysymykset() {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<Kysymykset> list=em.createQuery("select xyx from kysymykset xyx").getResultList();		
+		List<Kysymykset> list=em.createQuery("select xyx from Kysymykset xyx").getResultList();		
 		em.getTransaction().commit();
 		return list;
 	}	
@@ -88,4 +88,10 @@ public class KysymysService {
 		em.getTransaction().commit();
 		return f;
 	}	
+	@GET
+	@Path("/tadaa")
+	public String tadaa() {
+		return "tadaa";
+	}
 }
+

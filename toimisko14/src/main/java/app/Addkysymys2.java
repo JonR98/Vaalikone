@@ -13,7 +13,7 @@ import app.model.Kysymykset;
 
 @WebServlet(
     name = "Addkysymykset",
-    urlPatterns = {"/addkysymykset"}
+    urlPatterns = {"/addkysymykset2"}
 )
 public class Addkysymys2 extends HttpServlet {
 
