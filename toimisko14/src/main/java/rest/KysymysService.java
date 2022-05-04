@@ -28,7 +28,7 @@ public class KysymysService {
 	public List<Kysymykset> readKysymykset() {
 		EntityManager em=emf.createEntityManager();
 		em.getTransaction().begin();
-		List<Kysymykset> list=em.createQuery("select kysymys_id from kysymykset kysymys_id").getResultList();		
+		List<Kysymykset> list=em.createQuery("select xyx from kysymykset xyx").getResultList();		
 		em.getTransaction().commit();
 		return list;
 	}	
