@@ -4,10 +4,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	
 <!-- The name of the persistence unit: here jpa247. This is used in the application code -->	
-	<persistence-unit name="vaalikone">
+	<persistence-unit name="toimisko14">
 <!-- All the classes, which belong to the peristence unit and so can be persisted using JPA
 	Here there is just one: app.Fish. All the other should be added in the same way. -->	
 	<class>app.model.Kysymykset.java</class>
+	<class>app.model.EditKysymykset.java</class>
+	<class>app.model.AddKysymykset.java</class>
 <!-- If using MySQL 5.7 or newer -->
 <!--  
 	as a root user in the MySQL command prompt give the commands:
