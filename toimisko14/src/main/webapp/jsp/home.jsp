@@ -13,6 +13,7 @@
         <br><br>
         <a href="/showdata">Muokkaa tai poista ehdokas</a>
         <a href="/form.html">Lisää ehdokas</a>
+        <th><a href='/editkysymys'>Muokkaa kysymystä</a></th>
         <a href="/logout">Logout</a>
     </div>
 </body>
